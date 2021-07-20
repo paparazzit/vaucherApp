@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container header">
+			<div class="row justify-content-center">
+				<div class="jumbotron col-10">
+					<h1 class="display-4 text-center">Vauceri</h1>
+				</div>
+			</div>
+		</div>
+		<div class="container mt-3">
+			<div class="col-6 offset-3 d-flex align-center justify-content-around">
+				<button class="btn btn-danger btn-views" data-view="main-view">
+					Vauceri
+				</button>
+				<button class="btn btn-primary btn-views" data-view="napravi-view">
+					Napravi Vaucer
+				</button>
+				<button class="btn btn-warning btn-views" data-view="izmeni-view">
+					Izmeni vaucer
+				</button>
+			</div>
+		</div>
+
+		<!-- Glavni kontajner sa viewovima  -->
+		<div class="contnainer">
+			<!-- MAIN VIEW -->
+			<div class="row justify-content-center views" id="main-view">
+				<div class="col-10">
+					<h2 class="display-4">Prikaz vaucer</h2>
+					<hr />
+					<table class="table" id="main-table">
+						<!-- HEADER TABELE ZA VAUCERE -->
+					</table>
+				</div>
+			</div>
+			<!-- NAPRAVI VAUCER -->
+			<div class="row justify-content-center views" id="napravi-view">
+				<div class="col-10">
+					<h2 class="display-4">Napravi vaucer</h2>
+					<hr />
+				</div>
+				<div class="col-8">
+					<input
+						id="email"
+						type="text"
+						name="email"
+						class="form-control mb-3"
+						placeholder="Email"
+					/>
+					<div class="code-box mb-3">
+						<button id="gen_code" class="btn btn-primary">Generisi kod</button>
+						<div class="generisan-kod border">no code</div>
+					</div>
+					<input
+						id="iznos"
+						type="text"
+						name="iznos"
+						class="form-control mb-3"
+						placeholder="Iznos"
+					/>
+					<table class="table" id="preview-table"></table>
+					<button class="btn btn-warning form-control" id="makeNew">
+						Dodaj Vaucer
+					</button>
+				</div>
+			</div>
+
+			<!-- Izmeni Vaucer VAUCER -->
+			<div class="row justify-content-center views" id="izmeni-view">
+				<div class="col-10">
+					<h2 class="display-4">Izmeni vaucer</h2>
+
+					<table id="edit-table" class="table">
+						<!-- Napravi headere za table -->
+						<!-- Napravi body za table -->
+					</table>
+				</div>
+				<!-- <div class="izmeni-modal">
+					<div class="izmeni-content">
+						<div class="close-modal">X</div>
+						<div class="modal-izmeni"></div>
+					</div>
+				</div> -->
+				<button class="btn btn-primary btn-sm" id="undo">Undo</button>
+			</div>
+
+			<div class="my-modal">
+				<div class="modal-content">
+					<div class="close-modal">X</div>
+					<div class="modal-izmeni"></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="ukupno">
+						Ukupna Sredstva u Vaucerima: <span id="ukupno"></span>din
+						<br />Ukupno Vaucera:
+						<span id="brVaucera"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="db.js"></script>
+		<script src="main.js"></script>
+	</body>
+</html>
